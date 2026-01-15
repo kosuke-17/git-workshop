@@ -40,7 +40,14 @@
 - [ ] `git log --oneline`で簡潔な履歴を確認する
 - [ ] `git log --graph --oneline`でグラフ表示を確認する
 
-### ステップ 6: 変更の取り消し（オプション）
+### ステップ 6: ブランチの作成と確認（オプション）
+
+- [ ] `git branch feature/basic-title`で新しいブランチを作成する
+- [ ] `git branch`でブランチ一覧を確認する（現在のブランチに`*`が表示される）
+- [ ] `git checkout feature/basic-title`でブランチを切り替える
+- [ ] `git checkout main`（または`git checkout master`）でメインブランチに戻る
+
+### ステップ 7: 変更の取り消し（オプション）
 
 - [ ] `index.html`に適当な変更を加える
 - [ ] `git status`で変更を確認する
