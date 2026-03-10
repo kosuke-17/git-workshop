@@ -2,89 +2,425 @@
 <html lang="ja">
   <head>
     <meta charset="UTF-8" />
-    <title>私たちのカフェ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Team Horizon</title>
     <style>
-      body {
-        font-family: sans-serif;
-        background-color: #ffffff;
-        color: #333333;
+      /* ============================================
+       編集ポイント A：テーマカラーを変えてみよう
+       好きな色コードに書き換えてください
+       例） 青 → #2563eb  緑 → #16a34a  紫 → #7c3aed
+    ============================================ */
+      :root {
+        --color-primary: #2563eb; /* メインカラー（ナビ・ボタン・見出し） */
+        --color-accent: #0ea5e9; /* アクセントカラー（グラデーション） */
+        --color-bg: #f8fafc; /* ページ背景 */
+        --color-text: #1e293b; /* 本文テキスト */
+        --color-muted: #64748b; /* サブテキスト */
+      }
+
+      *,
+      *::before,
+      *::after {
         margin: 0;
         padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Hiragino Sans", "Meiryo", sans-serif;
+        background: var(--color-bg);
+        color: var(--color-text);
+        line-height: 1.6;
+      }
+
+      /* ナビゲーション */
+      nav {
+        background: var(--color-primary);
+        padding: 0 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 60px;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      .nav-logo {
+        color: #fff;
+        font-size: 20px;
+        font-weight: bold;
+        letter-spacing: 0.05em;
+        text-decoration: none;
+      }
+
+      .nav-links a {
+        color: rgba(255, 255, 255, 0.85);
+        text-decoration: none;
+        margin-left: 28px;
+        font-size: 14px;
+        transition: color 0.2s;
+      }
+
+      .nav-links a:hover {
+        color: #fff;
       }
 
       /* ヒーローセクション */
       .hero {
-        background-color: #f5f5f5;
-        padding: 60px 40px;
+        background: linear-gradient(
+          135deg,
+          var(--color-primary),
+          var(--color-accent)
+        );
+        color: #fff;
         text-align: center;
+        padding: 100px 24px 80px;
       }
 
-      h1 {
-        font-size: 2.4rem;
-        color: #333333;
-        margin: 0 0 12px;
+      .hero h1 {
+        font-size: clamp(28px, 5vw, 52px);
+        font-weight: bold;
+        line-height: 1.3;
+        margin-bottom: 16px;
       }
 
-      .tagline {
-        font-size: 1.1rem;
-        color: #666666;
-        margin: 0;
+      .hero p {
+        font-size: 18px;
+        opacity: 0.9;
+        max-width: 540px;
+        margin: 0 auto 36px;
       }
 
-      /* メニューセクション */
-      .menu-section {
-        max-width: 600px;
-        margin: 48px auto;
-        padding: 0 24px;
+      .hero-btn {
+        display: inline-block;
+        background: #fff;
+        color: var(--color-primary);
+        font-weight: bold;
+        font-size: 15px;
+        padding: 14px 36px;
+        border-radius: 50px;
+        text-decoration: none;
+        transition: transform 0.2s, box-shadow 0.2s;
       }
 
-      .menu-section h2 {
-        font-size: 1.4rem;
-        color: #333333;
-        border-bottom: 2px solid #dddddd;
-        padding-bottom: 8px;
+      .hero-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
       }
 
-      .menu-section ul {
-        list-style: none;
-        padding: 0;
+      /* セクション共通 */
+      section {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 72px 24px;
       }
 
-      .menu-section li {
-        padding: 10px 0;
-        border-bottom: 1px solid #eeeeee;
-        color: #444444;
+      .section-label {
+        font-size: 12px;
+        font-weight: bold;
+        letter-spacing: 0.15em;
+        color: var(--color-primary);
+        text-transform: uppercase;
+        margin-bottom: 8px;
+      }
+
+      .section-title {
+        font-size: 30px;
+        font-weight: bold;
+        margin-bottom: 16px;
+      }
+
+      .section-lead {
+        color: var(--color-muted);
+        font-size: 15px;
+        max-width: 560px;
+        margin-bottom: 48px;
+      }
+
+      /* 私たちについてカード */
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+      }
+
+      @media (max-width: 600px) {
+        .about-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .about-card {
+        background: #fff;
+        border: 1px solid #e2e8f0;
+        border-radius: 12px;
+        padding: 28px 24px;
+      }
+
+      .about-card-icon {
+        font-size: 32px;
+        margin-bottom: 12px;
+      }
+
+      .about-card h3 {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 8px;
+      }
+
+      .about-card p {
+        font-size: 14px;
+        color: var(--color-muted);
+        line-height: 1.7;
+      }
+
+      /* メンバーセクション */
+      .members-section {
+        background: #fff;
+        border-top: 1px solid #e2e8f0;
+        border-bottom: 1px solid #e2e8f0;
+      }
+
+      .members-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 24px;
+      }
+
+      .member-card {
+        text-align: center;
+        padding: 28px 16px;
+        border: 1px solid #e2e8f0;
+        border-radius: 12px;
+        transition: box-shadow 0.2s;
+      }
+
+      .member-card:hover {
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+      }
+
+      .member-avatar {
+        width: 72px;
+        height: 72px;
+        border-radius: 50%;
+        background: linear-gradient(
+          135deg,
+          var(--color-primary),
+          var(--color-accent)
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 28px;
+        margin: 0 auto 16px;
+        color: #fff;
+      }
+
+      .member-name {
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 4px;
+      }
+      .member-role {
+        font-size: 13px;
+        color: var(--color-primary);
+        font-weight: bold;
+        margin-bottom: 6px;
+      }
+      .member-bio {
+        font-size: 13px;
+        color: var(--color-muted);
+        line-height: 1.6;
+      }
+
+      /* お問い合わせ */
+      .contact-section {
+        text-align: center;
+        background: linear-gradient(
+          135deg,
+          var(--color-primary),
+          var(--color-accent)
+        );
+        color: #fff;
+        padding: 72px 24px;
+      }
+
+      .contact-section h2 {
+        font-size: 28px;
+        font-weight: bold;
+        margin-bottom: 12px;
+      }
+      .contact-section p {
+        opacity: 0.9;
+        margin-bottom: 32px;
+        font-size: 15px;
+      }
+
+      .contact-btn {
+        display: inline-block;
+        background: #fff;
+        color: var(--color-primary);
+        font-weight: bold;
+        padding: 14px 40px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-size: 15px;
       }
 
       /* フッター */
       footer {
-        margin-top: 80px;
-        padding: 24px;
+        background: var(--color-text);
+        color: rgba(255, 255, 255, 0.5);
         text-align: center;
-        background-color: #f9f9f9;
-        color: #999999;
-        font-size: 0.9rem;
+        padding: 24px;
+        font-size: 13px;
       }
     </style>
   </head>
   <body>
+    <!-- ナビゲーション -->
+    <nav>
+      <!-- ============================================
+         編集ポイント B：チーム名・会社名を変えよう
+    ============================================ -->
+      <a href="#" class="nav-logo">Team Horizon</a>
+      <div class="nav-links">
+        <a href="#about">私たちについて</a>
+        <a href="#members">メンバー</a>
+        <a href="#contact">お問い合わせ</a>
+      </div>
+    </nav>
+
+    <!-- ヒーローセクション -->
     <div class="hero">
-      <h1>私たちのカフェ</h1>
-      <p class="tagline">ゆっくりとした時間をお過ごしください</p>
+      <!-- ============================================
+         編集ポイント C：キャッチコピーを変えよう
+    ============================================ -->
+      <h1>アイデアを、<br />世界を動かす力に。</h1>
+
+      <!-- ============================================
+         編集ポイント D：サブコピーを変えよう
+    ============================================ -->
+      <p>
+        私たちは技術とデザインで、人々の毎日をもっと豊かにするプロダクトをつくります。
+      </p>
+
+      <a href="#about" class="hero-btn">チームを知る</a>
     </div>
 
-    <div class="menu-section">
-      <h2>メニュー</h2>
-      <ul>
-        <li>コーヒー — ¥500</li>
-        <li>紅茶 — ¥450</li>
-        <li>ケーキ — ¥600</li>
-      </ul>
+    <!-- 私たちについて -->
+    <section id="about">
+      <div class="section-label">About</div>
+      <h2 class="section-title">私たちについて</h2>
+      <p class="section-lead">
+        多様なバックグラウンドを持つメンバーが集まり、ユーザーファーストなプロダクト開発を行っています。
+      </p>
+
+      <div class="about-grid">
+        <!-- ============================================
+           編集ポイント E：カードのタイトルと説明を変えよう
+      ============================================ -->
+        <div class="about-card">
+          <div class="about-card-icon">🎯</div>
+          <h3>ミッション</h3>
+          <p>
+            テクノロジーを通じて、人々の可能性を広げることを目指しています。すべての人が自分らしく活躍できる社会をつくります。
+          </p>
+        </div>
+
+        <div class="about-card">
+          <div class="about-card-icon">💡</div>
+          <h3>ビジョン</h3>
+          <p>
+            10年後も使われ続けるプロダクトを。短期的な成果よりも、長期的な価値を大切にした開発を行っています。
+          </p>
+        </div>
+
+        <div class="about-card">
+          <div class="about-card-icon">🤝</div>
+          <h3>バリュー</h3>
+          <p>
+            透明性・誠実さ・チームワーク。互いの強みを活かし、心理的安全性の高い環境で日々挑戦を続けています。
+          </p>
+        </div>
+
+        <div class="about-card">
+          <div class="about-card-icon">🌏</div>
+          <h3>実績</h3>
+          <p>
+            国内外50社以上のクライアントとともに、累計100以上のプロジェクトを成功させてきました。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- メンバー -->
+    <div class="members-section" id="members">
+      <section>
+        <div class="section-label">Members</div>
+        <h2 class="section-title">チームメンバー</h2>
+        <p class="section-lead">
+          個性豊かなメンバーがそれぞれの得意を持ち寄り、ひとつのチームとして動いています。
+        </p>
+
+        <div class="members-grid">
+          <!-- ============================================
+             編集ポイント F：名前・役職・自己紹介を変えよう
+        ============================================ -->
+          <div class="member-card">
+            <div class="member-avatar">👤</div>
+            <div class="member-name">山田 太郎</div>
+            <div class="member-role">Team Lead</div>
+            <div class="member-bio">
+              プロジェクト全体を統括。メンバーが最大限活躍できる環境を整えます。
+            </div>
+          </div>
+
+          <div class="member-card">
+            <div class="member-avatar">👤</div>
+            <div class="member-name">佐藤 花子</div>
+            <div class="member-role">Frontend Engineer</div>
+            <div class="member-bio">
+              使いやすさと美しさを両立したUIを追求しています。
+            </div>
+          </div>
+
+          <div class="member-card">
+            <div class="member-avatar">👤</div>
+            <div class="member-name">田中 健一</div>
+            <div class="member-role">Backend Engineer</div>
+            <div class="member-bio">
+              安定性とスピードを両立するアーキテクチャ設計が得意です。
+            </div>
+          </div>
+
+          <div class="member-card">
+            <div class="member-avatar">👤</div>
+            <div class="member-name">鈴木 あい</div>
+            <div class="member-role">UI/UX Designer</div>
+            <div class="member-bio">
+              「使って嬉しい」体験をユーザーリサーチから設計します。
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
 
+    <!-- お問い合わせ -->
+    <div class="contact-section" id="contact">
+      <h2>一緒に働きませんか？</h2>
+      <p>
+        私たちのチームに興味を持っていただけた方は、お気軽にご連絡ください。
+      </p>
+      <a href="mailto:hello@team-horizon.example" class="contact-btn"
+        >お問い合わせ</a
+      >
+    </div>
+
+    <!-- フッター -->
     <footer>
-      <p>営業時間: 10:00 - 20:00</p>
-      <p>© 2024 私たちのカフェ</p>
+      <p>&copy; 2025 Team Horizon. All rights reserved.</p>
     </footer>
   </body>
 </html>
