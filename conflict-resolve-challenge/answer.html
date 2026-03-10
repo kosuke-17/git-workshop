@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<!--
+  ✅ ANSWER.html — コンフリクト解消の模範解答
+  ================================================
+  解消方針:
+    デザイン (背景色・文字色・border-radius)
+      → feature/designer-N のダークテーマを採用
+
+    コンテンツ (タグライン・メニュー・営業時間)
+      → main の更新内容を採用
+  ================================================
+-->
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>私たちのカフェ</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        /* ✅ feature/designer-N のダークテーマを採用 */
+        background-color: #1a1a2e;
+        color: #eaeaea;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* ヒーローセクション */
+      .hero {
+        /* ✅ feature/designer-N のダークテーマを採用 */
+        background-color: #16213e;
+        padding: 60px 40px;
+        text-align: center;
+        border-radius: 0 0 16px 16px;
+      }
+
+      h1 {
+        font-size: 2.4rem;
+        /* ✅ feature/designer-N のアクセントカラーを採用 */
+        color: #e94560;
+        margin: 0 0 12px;
+      }
+
+      .tagline {
+        font-size: 1.1rem;
+        color: #a8a8b3;
+        margin: 0;
+      }
+
+      /* メニューセクション */
+      .menu-section {
+        max-width: 600px;
+        margin: 48px auto;
+        padding: 0 24px;
+      }
+
+      .menu-section h2 {
+        font-size: 1.4rem;
+        color: #eaeaea;
+        border-bottom: 2px solid #2d2d4e;
+        padding-bottom: 8px;
+      }
+
+      .menu-section ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .menu-section li {
+        padding: 10px 0;
+        border-bottom: 1px solid #2d2d4e;
+        color: #cccccc;
+      }
+
+      /* フッター */
+      footer {
+        margin-top: 80px;
+        padding: 24px;
+        text-align: center;
+        background-color: #16213e;
+        color: #a8a8b3;
+        font-size: 0.9rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="hero">
+      <h1>私たちのカフェ</h1>
+      <!-- ✅ main のタグラインを採用 -->
+      <p class="tagline">心温まるひとときを、あなたに</p>
+    </div>
+
+    <div class="menu-section">
+      <h2>メニュー</h2>
+      <!-- ✅ main の更新メニュー（スコーン追加）を採用 -->
+      <ul>
+        <li>コーヒー — ¥500</li>
+        <li>紅茶 — ¥450</li>
+        <li>ケーキ — ¥600</li>
+        <li>スコーン — ¥350</li>
+      </ul>
+    </div>
+
+    <footer>
+      <!-- ✅ main の営業時間を採用 -->
+      <p>営業時間: 9:00 - 21:00</p>
+      <p>© 2024 私たちのカフェ</p>
+    </footer>
+  </body>
+</html>
