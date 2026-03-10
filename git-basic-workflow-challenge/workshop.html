@@ -913,7 +913,9 @@
           <div class="info-box-label">📂 使用ファイル</div>
           リポジトリ内の
           <span class="highlight">top-page.html</span>
-          を使います。会社・チームの紹介ページです。ファイル内の
+          を元に、自分用のコピー
+          <span class="highlight">top-page.your-name.html</span>
+          を作成して使います。会社・チームの紹介ページです。ファイル内の
           <code>&lt;!-- 編集ポイント A〜F --&gt;</code>
           コメントを目印に変更箇所を見つけましょう。
         </div>
@@ -922,12 +924,30 @@
           <li class="task-item" onclick="toggleTask(this, 2, 0)">
             <div class="task-check">✓</div>
             <div class="task-text">
-              <strong>top-page.html をエディタとブラウザで開く</strong><br />
-              <span class="highlight">top-page.html</span> を VS Code
-              などのエディタで開きます。同時にブラウザにドラッグ＆ドロップして、変更前の見た目を確認しておきましょう。
+              <strong
+                >top-page.html をコピーして top-page.your-name.html
+                を作成する</strong
+              ><br />
+              リポジトリ内の
+              <span class="highlight">top-page.html</span>
+              を VS Code などのエディタで開き、
+              <span class="highlight">名前を付けて保存</span>
+              などを使って
+              <span class="highlight">top-page.your-name.html</span>
+              という名前で同じフォルダにコピーを作成します。
+              以降の編集はこのファイルで行います。
             </div>
           </li>
           <li class="task-item" onclick="toggleTask(this, 2, 1)">
+            <div class="task-check">✓</div>
+            <div class="task-text">
+              <strong>top-page.your-name.html をエディタとブラウザで開く</strong
+              ><br />
+              <span class="highlight">top-page.your-name.html</span> を VS Code
+              などのエディタで開きます。同時にブラウザにドラッグ＆ドロップして、変更前の見た目を確認しておきましょう。
+            </div>
+          </li>
+          <li class="task-item" onclick="toggleTask(this, 2, 2)">
             <div class="task-check">✓</div>
             <div class="task-text">
               <strong>【編集ポイント B】チーム名・会社名を変更する</strong
@@ -939,7 +959,7 @@
               例：<code>Dev Squad Tokyo</code>
             </div>
           </li>
-          <li class="task-item" onclick="toggleTask(this, 2, 2)">
+          <li class="task-item" onclick="toggleTask(this, 2, 3)">
             <div class="task-check">✓</div>
             <div class="task-text">
               <strong>【編集ポイント F】自分の名前・役職を追加する</strong
@@ -951,7 +971,7 @@
               を自分の名前・役職に書き換えて保存します。
             </div>
           </li>
-          <li class="task-item" onclick="toggleTask(this, 2, 3)">
+          <li class="task-item" onclick="toggleTask(this, 2, 4)">
             <div class="task-check">✓</div>
             <div class="task-text">
               <strong>【編集ポイント A】メインカラーを変更する</strong><br />
@@ -963,21 +983,21 @@
               ブラウザをリロードしてナビやボタンの色が変わったか確認しましょう。
             </div>
           </li>
-          <li class="task-item" onclick="toggleTask(this, 2, 4)">
+          <li class="task-item" onclick="toggleTask(this, 2, 5)">
             <div class="task-check">✓</div>
             <div class="task-text">
               <strong>Sourcetree で差分を確認する</strong><br />
               Sourcetree の
               <span class="highlight">作業ツリーのファイル</span> に
-              <span class="highlight">top-page.html</span>
+              <span class="highlight">top-page.your-name.html</span>
               が表示されます。ファイルをクリックすると右側に差分（赤＝削除した行、緑＝追加した行）が表示されます。
             </div>
           </li>
-          <li class="task-item" onclick="toggleTask(this, 2, 5)">
+          <li class="task-item" onclick="toggleTask(this, 2, 6)">
             <div class="task-check">✓</div>
             <div class="task-text">
               <strong>ステージングしてコミットする</strong><br />
-              top-page.html を
+              top-page.your-name.html を
               <span class="highlight">＋ ステージング</span>
               してから、変更内容がわかるコミットメッセージを書いて
               <span class="highlight">コミット</span> ボタンを押します。<br />

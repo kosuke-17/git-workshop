@@ -1010,7 +1010,13 @@
 
         <div class="info-box concept">
           <div class="info-box-label">🎯 今回の作戦</div>
-          2人とも <span class="highlight">top-page.html</span> の
+          まずはリポジトリ内の
+          <span class="highlight">top-page.html</span>
+          を元に、自分用のコピー
+          <span class="highlight">top-page.your-name.html</span>
+          を作成して使います。その上で 2人とも
+          <span class="highlight">top-page.your-name.html</span>
+          の
           <strong>キャッチコピー（編集ポイント C）</strong>
           を、それぞれ<strong>別の文言</strong>に書き換えます。同じ行が2つの異なる内容になるため、マージ時にコンフリクトが起きます。
         </div>
@@ -1019,12 +1025,30 @@
           <li class="task-item" onclick="toggleTask(this,2,0)">
             <div class="task-check">✓</div>
             <div class="task-text">
-              <strong>top-page.html をエディタとブラウザで開く</strong><br />
-              <span class="highlight">top-page.html</span> を VS Code
-              で開きます。同時にブラウザにドラッグして現在の見た目を確認しましょう。
+              <strong
+                >top-page.html をコピーして top-page.your-name.html
+                を作成する</strong
+              ><br />
+              リポジトリ内の
+              <span class="highlight">top-page.html</span>
+              を VS Code などのエディタで開き、
+              <span class="highlight">名前を付けて保存</span>
+              などを使って
+              <span class="highlight">top-page.your-name.html</span>
+              という名前で同じフォルダにコピーを作成します。
+              以降の編集はこのファイルで行います。
             </div>
           </li>
           <li class="task-item" onclick="toggleTask(this,2,1)">
+            <div class="task-check">✓</div>
+            <div class="task-text">
+              <strong>top-page.your-name.html をエディタとブラウザで開く</strong
+              ><br />
+              <span class="highlight">top-page.your-name.html</span> を VS Code
+              で開きます。同時にブラウザにドラッグして現在の見た目を確認しましょう。
+            </div>
+          </li>
+          <li class="task-item" onclick="toggleTask(this,2,2)">
             <div class="task-check">✓</div>
             <div class="task-text">
               <strong
@@ -1057,7 +1081,7 @@
             <div class="task-text">
               <strong>Sourcetree で差分を確認する</strong><br />
               <span class="highlight">作業ツリーのファイル</span> に
-              top-page.html
+              <span class="highlight">top-page.your-name.html</span>
               が表示されます。クリックすると右側に差分（赤＝削除、緑＝追加）が確認できます。
             </div>
           </li>
